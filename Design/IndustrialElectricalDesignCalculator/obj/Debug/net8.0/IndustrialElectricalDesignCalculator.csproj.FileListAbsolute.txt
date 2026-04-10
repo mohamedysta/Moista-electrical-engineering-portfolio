@@ -1,0 +1,14 @@
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\bin\Debug\net8.0\IndustrialElectricalDesignCalculator.exe
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\bin\Debug\net8.0\IndustrialElectricalDesignCalculator.deps.json
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\bin\Debug\net8.0\IndustrialElectricalDesignCalculator.runtimeconfig.json
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\bin\Debug\net8.0\IndustrialElectricalDesignCalculator.dll
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\bin\Debug\net8.0\IndustrialElectricalDesignCalculator.pdb
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\IndustrialElectricalDesignCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\IndustrialElectricalDesignCalculator.AssemblyInfoInputs.cache
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\IndustrialElectricalDesignCalculator.AssemblyInfo.cs
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\IndustrialElectricalDesignCalculator.csproj.CoreCompileInputs.cache
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\IndustrialElectricalDesignCalculator.dll
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\refint\IndustrialElectricalDesignCalculator.dll
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\IndustrialElectricalDesignCalculator.pdb
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\IndustrialElectricalDesignCalculator.genruntimeconfig.cache
+C:\Users\moham\source\repos\IndustrialElectricalDesignCalculator\obj\Debug\net8.0\ref\IndustrialElectricalDesignCalculator.dll
