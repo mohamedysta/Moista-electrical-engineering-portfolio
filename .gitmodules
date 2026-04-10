@@ -10,3 +10,6 @@
 [submodule "projects/VisualSLAM"]
 	path = projects/VisualSLAM
 	url = https://github.com/mohamedysta/VisualSLAM_.git
+[submodule "projects/UltraCamFusion"]
+	path = projects/UltraCamFusion
+	url = https://github.com/mohamedysta/ultra-cam-fusion.git
