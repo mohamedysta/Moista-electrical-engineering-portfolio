@@ -1,0 +1,20 @@
+þÿÿÿì###id###VisulizationRootBrowsableId###TargetIdAcknowledgementGroupText-###SearchableNonTechnicalFieldNamesOfDocument###ParentIds###ImmediateParentId###ReferenceFieldIdsInvalidAttempts	ValidDaysWarningDaysGenerationsMinNumPsswd
+ServerName
+PortNumberWindowsDomainNameStationNamePartnerNameNodeNameDisplayNameAcknowledgementModelIdEmailAddressAcknowledgedText
+ComingText	GoingTextCommonAlarmClassAcknowledgementBitAddress
+AlarmClass
+TriggerTag	AlarmTextPlcAcknowledgementBitAddressTriggerBitAddress###SearchFilterIds	CycleUnit	CycleTimeTextCommentNumber	ShortName
+LogoutTimeTitleLanguageVersionConstant nameEvent class###UpdatableParentIdInterfaceMember_NameInterfaceMember_DatatypeInterfaceMember_ValueInterfaceMember_CommentNetwork titleLADFBD CodeNetwork commentSCL CodeInstance DBDatatypeAddressValue	BackColor	GridColorTemplateAlarmSourceBorderBackColorBorderColorButtonBackColorButtonBackFillStyleButtonBarStyleButtonBorderBackColorButtonBorderColorButtonEdgeStyleButtonFirstGradientColorButtonMiddleGradientColorButtonSecondGradientColorColumnTextAckGroupColumnTextAlarmStateColumnTextAlarmTextColumnTextClassNameColumnTextDateColumnTextDeviceColumnTextDiagnosableColumnTextNumberColumnTextTime	EdgeStyle
+FilterTextFlashing
+FocusColorGridlineColorLayerSelectionBackColorSelectionForeColorSortByTimeDirectionTableBackColorTableEvenRowBackColor	TableFontTableForeColorTableHeaderBackColorTableHeaderBackFillStyleTableHeaderBorderBackColorTableHeaderBorderColorTableHeaderEdgeStyleTableHeaderFirstGradientColorTableHeaderFontTableHeaderForeColorTableHeaderMiddleGradientColorTableHeaderSecondGradientColorViewType	FunctionsBackFillStyleFont	ForeColorHorizontalAlignmentTextOrientationVerticalAlignmentFirstGradientColorHorizontalPictureAlignmentMiddleGradientColorModePictureAutoSizingSecondGradientColorTextOffTextOnVerticalPictureAlignment	PictureOnAdaptPicture
+AutoSizingPictureTransparentColorAboveUpperLimitColorBelowLowerLimitColor
+BlinkColorFillColorModeFlipRotation
+DataFormatFormatPatternUnitPropertyNameTagValueForPropertyTagPageUITypeEditorBitPositionUITypeEditorTagExpressionProcessValueAlarmLowerLimitColorAlarmUpperLimitColorBarBackColorBarEdgeStyleBarOrientation
+ScaleColorScalePositionSegmentColoringWarningLowerLimitColorWarningUpperLimitColorEvenRowBackColorSelectBackColorSelectForeColorColorEndStyle	FillStyleLineEndShapeStyle
+StartStyleStyleUITypeEditorStartvalueUITypeEditorEndvalueCaptionTextListDataTypeTagAddressPanelInfoAcquisitionTriggerModeAcquisitionCycleConfirmationTypeCodingPlcNameControllerTagLimitHighConstantLimitHighLowConstantLimitLowHighConstantLimitLowConstant	JobNumber
+StartValueAddressAccessMode
+ConnectionPageFormatUnitPageOrientationUnit	BackStyleBorderStyleMessageSourceSortingScrollbarBackgroundColorScrollbarForegroundColorCaptionColorCaptionFontCaptionTextCenterColorDangerLowerRangeColorDangerRangeColor	DialColorDialFillStyleInnerDialColorNormalRangeColorPointerColorScaleLabelColorScaleLabelFontScaleTickColor	UnitColorUnitFontUnitTextWarningLowerRangeColorWarningRangeColor
+LineColor1
+LineColor2OperatableAreaColor
+VisibilityAuthorFamilyUser-defined IDResizing###ReconstitutionDataIDAssociatedCultureFieldIdAssociatedProjectVersion!AssociatedIndexDataVersionFieldId,AssociatedTechnicalFieldNamesHashCodeFieldId-AssociatedTechnicalFieldContentVersionFieldIdIndexAtomStoreHelpTextInnerBackColorOffInnerBackColorOn
+PictureOffSwitchOrientationScrollBarOrientationRangeFromToUITypeEditorXPosStartUITypeEditorXPosEndUITypeEditorYPosStartUITypeEditorYPosEndAcknowledgementTag
