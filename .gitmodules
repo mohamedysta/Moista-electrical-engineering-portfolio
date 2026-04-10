@@ -1,0 +1,12 @@
+[submodule "projects/IconicStore"]
+	path = projects/IconicStore
+	url = https://github.com/mohamedysta/iconic-store.git
+[submodule "projects/VisualOdometryPipeline"]
+	path = projects/VisualOdometryPipeline
+	url = https://github.com/mohamedysta/visual-odometry-pipeline.git
+[submodule "projects/SensorsFusion"]
+	path = projects/SensorsFusion
+	url = https://github.com/mohamedysta/SensorsFusion.git
+[submodule "projects/VisualSLAM"]
+	path = projects/VisualSLAM
+	url = https://github.com/mohamedysta/VisualSLAM_.git
