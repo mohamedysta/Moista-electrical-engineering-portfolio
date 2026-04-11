@@ -1,0 +1,23 @@
+LIGHTSABER THERMAL ANALYSIS RESULTS
+====================================
+
+Problem Parameters:
+- Core length: 1.20 m
+- Handle length: 0.25 m
+- Core radius: 0.020 m
+- Core thermal conductivity: 0.35 W/m-K
+- Handle thermal conductivity: 0.05 W/m-K
+- Max heat generation: 1.0e+06 W/m³
+
+Numerical Grid:
+- Radial nodes: 5
+- Axial nodes (core): 12
+- Axial nodes (handle): 5
+- Total nodes: 80
+
+Results Summary:
+1. Air Cooling Scenario:
+   - Maximum temperature: 351.3 °C
+   - Heat transfer to hand: 20.16 W
+2. Water Cooling Scenario:
+   - Maximum temperature: 231.9 °C

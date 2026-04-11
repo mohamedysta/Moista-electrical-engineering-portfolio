@@ -1,0 +1,45 @@
+PSEUDO-CODE FOR LIGHTSABER THERMAL ANALYSIS
+==========================================
+
+1. INITIALIZATION
+   - Define geometric parameters (L1, L2, Rcore)
+   - Define thermal properties (k_core, k_handle, contact resistances)
+   - Define boundary conditions (T_air, T_hand, h_air, h_water)
+   - Create grid with specified number of nodes
+
+2. NODE NUMBERING
+   - Create 2D array mapping (i,j) position to node number
+   - Number nodes from 1 to N (total nodes)
+
+3. ENERGY BALANCE EQUATIONS
+   FOR each node (i,j):
+      CASE: Symmetry axis (i=1)
+         - Use L'Hopital's rule for r→0
+         - Special treatment for ∂T/∂r = 0
+      CASE: Outer surface (i=nr)
+         - Apply convection boundary condition
+         - q"_conv = h(T_surface - T_infinity)
+      CASE: Core-handle interface (j=nx_core)
+         - Apply contact resistance
+         - q" = (T_core - T_handle)/R"_tc
+      CASE: Handle base (j=1)
+         - Fixed temperature T_hand
+         - Consider contact resistance with hand
+      CASE: Interior nodes
+         - Standard 2D cylindrical conduction
+         - Include heat generation for core nodes
+
+4. MATRIX ASSEMBLY
+   - Build coefficient matrix A (N×N)
+   - Build right-hand side vector b (N×1)
+   - Each row represents one node equation
+
+5. SOLUTION
+   - Solve linear system: A*T = b
+   - Use direct solver (backslash in MATLAB)
+
+6. POST-PROCESSING
+   - Reshape 1D temperature vector to 2D array
+   - Calculate heat transfer to hand
+   - Create contour plots
+   - Repeat for water cooling scenario
