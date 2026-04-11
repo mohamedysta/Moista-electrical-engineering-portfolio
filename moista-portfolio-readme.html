@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moista — Electrical Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{--color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#f3f0ec;--color-surface-offset-2:#edeae5;--color-divider:#dcd9d5;--color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#7a7974;--color-text-faint:#bab9b4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-highlight:#cedcd8;--color-accent:#c85800;--shadow-sm:0 1px 2px oklch(0.2 0.01 80 / 0.06);--shadow-md:0 4px 12px oklch(0.2 0.01 80 / 0.08);--shadow-lg:0 12px 32px oklch(0.2 0.01 80 / 0.12)}
+[data-theme="dark"]{--color-bg:#111110;--color-surface:#191917;--color-surface-2:#1e1d1b;--color-surface-offset:#1a1918;--color-surface-offset-2:#222120;--color-surface-dynamic:#2a2927;--color-divider:#252422;--color-border:#323130;--color-text:#d8d7d4;--color-text-muted:#7a7977;--color-text-faint:#4f4e4c;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#253438;--color-accent:#e07830;--shadow-sm:0 1px 2px oklch(0 0 0 / 0.25);--shadow-md:0 4px 12px oklch(0 0 0 / 0.35);--shadow-lg:0 12px 32px oklch(0 0 0 / 0.45)}
+:root{--font-body:'Inter',system-ui,sans-serif;--font-display:'Space Grotesk',system-ui,sans-serif;--text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);--text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);--text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;--transition:180ms cubic-bezier(0.16,1,0.3,1);--content-default:1080px;--content-narrow:640px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:4rem;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);min-height:100dvh;line-height:1.65}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+a,button{transition:color var(--transition),background var(--transition),border-color var(--transition),opacity var(--transition)}
+::selection{background:oklch(from var(--color-primary) l c h / 0.2)}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+.container{max-width:var(--content-default);margin-inline:auto;padding-inline:var(--space-6)}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:oklch(from var(--color-bg) l c h / 0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-border);padding:var(--space-3) 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)}
+.logo{display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);letter-spacing:-.01em}
+.logo-icon{width:32px;height:32px;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:var(--space-1);list-style:none}
+.nav-links a{font-size:var(--text-xs);font-weight:500;padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);color:var(--color-text-muted)}
+.nav-links a:hover{color:var(--color-text);background:var(--color-surface-offset)}
+.header-actions{display:flex;align-items:center;gap:var(--space-2)}
+.theme-toggle{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);background:var(--color-surface-offset)}
+.theme-toggle:hover{color:var(--color-text);background:var(--color-surface-offset-2)}
+.btn-github{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;padding:var(--space-2) var(--space-4);background:var(--color-primary);color:#fff;border-radius:var(--radius-full)}
+.btn-github:hover{background:var(--color-primary-hover)}
+
+/* HERO */
+.hero{padding:clamp(var(--space-16),10vw,var(--space-24)) 0 clamp(var(--space-12),8vw,var(--space-20));border-bottom:1px solid var(--color-border);position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 65% 50%,oklch(from var(--color-primary) l c h / 0.08) 0%,transparent 70%)}
+.hero-inner{position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-primary);background:var(--color-primary-highlight);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);margin-bottom:var(--space-6)}
+.hero-title{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:var(--space-4);max-width:14ch}
+.hero-title span{color:var(--color-primary)}
+.hero-desc{font-size:var(--text-base);color:var(--color-text-muted);max-width:58ch;margin-bottom:var(--space-8);line-height:1.7}
+.hero-stats{display:flex;flex-wrap:wrap;gap:var(--space-8)}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat-value{font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;letter-spacing:-.03em;line-height:1}
+.stat-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:500}
+
+/* SECTIONS */
+.section{padding:clamp(var(--space-12),6vw,var(--space-20)) 0;border-bottom:1px solid var(--color-border)}
+.section:last-child{border-bottom:none}
+.section-header{margin-bottom:var(--space-8)}
+.section-eyebrow{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-2)}
+.section-title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.section-desc{font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2);max-width:55ch}
+
+/* CARDS */
+.folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-4)}
+.folder-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4);transition:box-shadow var(--transition),border-color var(--transition),transform var(--transition);text-decoration:none;color:inherit}
+.folder-card:hover{box-shadow:var(--shadow-md);border-color:var(--color-primary);transform:translateY(-2px)}
+.folder-icon{width:42px;height:42px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;background:var(--color-primary-highlight);font-size:20px}
+.folder-name{font-family:var(--font-display);font-weight:600;font-size:var(--text-base);margin-bottom:var(--space-2)}
+.folder-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.55}
+.folder-tags{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:auto;padding-top:var(--space-2)}
+.tag{font-size:var(--text-xs);font-weight:500;padding:2px var(--space-2);background:var(--color-surface-offset);color:var(--color-text-muted);border-radius:var(--radius-full);border:1px solid var(--color-border)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:var(--space-4)}
+.project-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);transition:box-shadow var(--transition),border-color var(--transition),transform var(--transition)}
+.project-card:hover{box-shadow:var(--shadow-md);border-color:oklch(from var(--color-primary) l c h / 0.5);transform:translateY(-2px)}
+.project-type-badge{display:inline-flex;align-items:center;gap:var(--space-1);font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--color-accent);background:oklch(from var(--color-accent) l c h / 0.12);padding:2px var(--space-2);border-radius:var(--radius-full);width:fit-content}
+.project-name{font-family:var(--font-display);font-weight:600;font-size:var(--text-base)}
+.project-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.55;flex:1}
+.project-link{display:inline-flex;align-items:center;gap:var(--space-1);font-size:var(--text-xs);font-weight:600;color:var(--color-primary);margin-top:var(--space-2)}
+.project-link:hover{color:var(--color-primary-hover)}
+.project-link svg{transition:transform var(--transition)}
+.project-link:hover svg{transform:translateX(3px)}
+
+/* SKILLS */
+.skill-item{display:flex;align-items:center;gap:var(--space-3);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);font-size:var(--text-sm);font-weight:500}
+.skill-dot{width:8px;height:8px;border-radius:var(--radius-full);background:var(--color-primary);flex-shrink:0}
+.skill-dot.orange{background:var(--color-accent)}
+.skill-dot.muted{background:var(--color-text-muted)}
+.skills-col{display:flex;flex-direction:column;gap:var(--space-3)}
+
+/* TABLE */
+.tools-table{width:100%;border-collapse:collapse}
+.tools-table th{text-align:left;font-size:var(--text-xs);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-muted);padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-border)}
+.tools-table td{font-size:var(--text-sm);padding:var(--space-3) var(--space-4);border-bottom:1px solid oklch(from var(--color-border) l c h / 0.5);vertical-align:top}
+.tools-table tr:last-child td{border-bottom:none}
+.tools-table tr:hover td{background:var(--color-surface-offset)}
+
+/* FOOTER */
+.site-footer{padding:var(--space-8) 0;border-top:1px solid var(--color-border);text-align:center}
+.footer-name{font-family:var(--font-display);font-weight:700;font-size:var(--text-base);margin-bottom:var(--space-2)}
+.footer-sub{font-size:var(--text-xs);color:var(--color-text-muted)}
+.footer-links{display:flex;justify-content:center;gap:var(--space-6);margin-top:var(--space-4);flex-wrap:wrap}
+.footer-links a{font-size:var(--text-xs);color:var(--color-text-muted)}
+.footer-links a:hover{color:var(--color-primary)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:640px){.nav-links{display:none}.hero-stats{gap:var(--space-6)}}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-label="Moista EE">
+          <rect width="32" height="32" rx="8" fill="currentColor" fill-opacity="0.08"/>
+          <path d="M7 22L11 10L16 18L21 10L25 22" stroke="var(--color-primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="8" r="2" fill="var(--color-primary)" opacity="0.7"/>
+        </svg>
+        Moista EE Portfolio
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#folders">Structure</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#tools">Tools</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio" target="_blank" rel="noopener noreferrer" class="btn-github">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Electrical Engineering Portfolio
+      </div>
+      <h1 class="hero-title">Mohamed Yehia<br><span>Electrical Engineer</span></h1>
+      <p class="hero-desc">BSc Electrical Engineering — Alexandria University &middot; MSc Electrical Vehicle Systems — Brunel University London. A hands-on portfolio spanning circuit design, power electronics, PLC automation, PCB layout, motor drives, and embedded systems.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-value">6</span><span class="stat-label">Domains</span></div>
+        <div class="stat"><span class="stat-value">15+</span><span class="stat-label">Projects</span></div>
+        <div class="stat"><span class="stat-value">7+</span><span class="stat-label">Tools</span></div>
+        <div class="stat"><span class="stat-value">EV</span><span class="stat-label">Specialisation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="folders">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Repository Structure</p>
+        <h2 class="section-title">Browse by Domain</h2>
+        <p class="section-desc">Click any card to open the folder directly on GitHub.</p>
+      </div>
+      <div class="folder-grid">
+        <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/Control%20and%20Automation" target="_blank" rel="noopener noreferrer" class="folder-card reveal">
+          <div class="folder-icon">&#9881;&#65039;</div>
+          <div><div class="folder-name">Control &amp; Automation</div><div class="folder-desc">PLC programming (TIA Portal, RSLogix), Field-Oriented Control graduation project, MATLAB simulations, batch process automation, and predictive maintenance.</div></div>
+          <div class="folder-tags"><span class="tag">FOC</span><span class="tag">PLC</span><span class="tag">MATLAB</span><span class="tag">RSLogix</span><span class="tag">Predictive Maint.</span></div>
+        </a>
+        <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/PCB-designs" target="_blank" rel="noopener noreferrer" class="folder-card reveal">
+          <div class="folder-icon">&#128268;</div>
+          <div><div class="folder-name">PCB Designs</div><div class="folder-desc">Custom PCB footprint design, schematic capture, and board layout files covering power supply circuits, sensor boards, and embedded hardware.</div></div>
+          <div class="folder-tags"><span class="tag">PCB Layout</span><span class="tag">Schematic</span><span class="tag">Footprints</span></div>
+        </a>
+        <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/Motors%2C%20Transformers" target="_blank" rel="noopener noreferrer" class="folder-card reveal">
+          <div class="folder-icon">&#128260;</div>
+          <div><div class="folder-name">Motors &amp; Transformers</div><div class="folder-desc">AC/DC motor drive analysis, transformer design and testing, speed control, and torque-current characteristics — directly relevant to EV drivetrain systems.</div></div>
+          <div class="folder-tags"><span class="tag">Motor Drives</span><span class="tag">Transformers</span><span class="tag">Speed Control</span></div>
+        </a>
+        <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/Design" target="_blank" rel="noopener noreferrer" class="folder-card reveal">
+          <div class="folder-icon">&#128208;</div>
+          <div><div class="folder-name">Design</div><div class="folder-desc">Circuit design and simulation — MOSFET/BJT amplifiers, Schmitt trigger design, power electronics, and Proteus simulation projects.</div></div>
+          <div class="folder-tags"><span class="tag">Proteus</span><span class="tag">MOSFET</span><span class="tag">Schmitt Trigger</span><span class="tag">Power Electronics</span></div>
+        </a>
+        <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/Extra%20Projects" target="_blank" rel="noopener noreferrer" class="folder-card reveal">
+          <div class="folder-icon">&#129514;</div>
+          <div><div class="folder-name">Extra Projects</div><div class="folder-desc">Supplementary and exploratory engineering work demonstrating initiative and wider technical curiosity beyond core modules.</div></div>
+          <div class="folder-tags"><span class="tag">Research</span><span class="tag">Experiments</span></div>
+        </a>
+        <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/projects" target="_blank" rel="noopener noreferrer" class="folder-card reveal">
+          <div class="folder-icon">&#128640;</div>
+          <div><div class="folder-name">Projects (Submodules)</div><div class="folder-desc">Linked external repos: Visual SLAM, Sensors Fusion, Visual Odometry Pipeline, UltraCamFusion, Pendulum Simulator (Unity), and Iconic Store.</div></div>
+          <div class="folder-tags"><span class="tag">SLAM</span><span class="tag">Sensors Fusion</span><span class="tag">Computer Vision</span><span class="tag">Unity</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Linked Repositories</p>
+        <h2 class="section-title">Notable Projects</h2>
+        <p class="section-desc">Submodule projects and highlight items from the portfolio, each linkable directly.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#9889; Control</span>
+          <div class="project-name">FOC Graduation Project</div>
+          <div class="project-desc">Field-Oriented Control (FOC) for AC motor drive — the cornerstone of this portfolio and core to EV traction engineering.</div>
+          <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/Control%20and%20Automation/FOC%20GP" target="_blank" rel="noopener noreferrer" class="project-link">View folder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#129302; Robotics</span>
+          <div class="project-name">Visual SLAM</div>
+          <div class="project-desc">Simultaneous Localisation and Mapping using visual input — key to autonomous vehicle perception research.</div>
+          <a href="https://github.com/mohamedysta/VisualSLAM_" target="_blank" rel="noopener noreferrer" class="project-link">View repo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#128225; Sensing</span>
+          <div class="project-name">Sensors Fusion</div>
+          <div class="project-desc">Multi-sensor data fusion pipeline combining disparate sensor modalities for improved state estimation accuracy.</div>
+          <a href="https://github.com/mohamedysta/SensorsFusion" target="_blank" rel="noopener noreferrer" class="project-link">View repo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#128065; Vision</span>
+          <div class="project-name">Visual Odometry Pipeline</div>
+          <div class="project-desc">Camera-based motion estimation for GPS-free localisation, applicable to EV and autonomous driving contexts.</div>
+          <a href="https://github.com/mohamedysta/visual-odometry-pipeline" target="_blank" rel="noopener noreferrer" class="project-link">View repo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#128225; Sensing</span>
+          <div class="project-name">UltraCamFusion</div>
+          <div class="project-desc">Fusion of ultrasonic and camera data for enhanced obstacle detection and spatial awareness in embedded systems.</div>
+          <a href="https://github.com/mohamedysta/ultra-cam-fusion" target="_blank" rel="noopener noreferrer" class="project-link">View repo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#127918; Simulation</span>
+          <div class="project-name">Pendulum Simulator (Unity)</div>
+          <div class="project-desc">Physics-based pendulum simulation in Unity demonstrating dynamic systems and control theory fundamentals.</div>
+          <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/blob/main/projects/PendulumSimulator_unity.zip" target="_blank" rel="noopener noreferrer" class="project-link">Download zip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#127981; Automation</span>
+          <div class="project-name">IO Factory PLC</div>
+          <div class="project-desc">Industrial I/O control and factory automation using PLC ladder logic and function block programming.</div>
+          <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/tree/main/Control%20and%20Automation/IO%20FACTORY%20PLC" target="_blank" rel="noopener noreferrer" class="project-link">View folder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="project-card reveal">
+          <span class="project-type-badge">&#128302; Prediction</span>
+          <div class="project-name">Predictive Maintenance</div>
+          <div class="project-desc">Data-driven predictive maintenance system using condition monitoring and early fault detection techniques.</div>
+          <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio/blob/main/Control%20and%20Automation/Predictive_Maintenance.zip" target="_blank" rel="noopener noreferrer" class="project-link">Download zip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Technical Profile</p>
+        <h2 class="section-title">Skills &amp; Competencies</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:var(--space-8)">
+        <div class="reveal">
+          <p style="font-size:var(--text-xs);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-4)">Power &amp; Drives</p>
+          <div class="skills-col">
+            <div class="skill-item"><span class="skill-dot"></span>Field-Oriented Control (FOC)</div>
+            <div class="skill-item"><span class="skill-dot"></span>AC/DC Motor Drives</div>
+            <div class="skill-item"><span class="skill-dot"></span>Power Electronics &amp; Converters</div>
+            <div class="skill-item"><span class="skill-dot"></span>Transformer Design &amp; Analysis</div>
+            <div class="skill-item"><span class="skill-dot"></span>EV Traction Systems</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p style="font-size:var(--text-xs);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-4)">Automation &amp; Control</p>
+          <div class="skills-col">
+            <div class="skill-item"><span class="skill-dot orange"></span>PLC Programming (TIA Portal V19)</div>
+            <div class="skill-item"><span class="skill-dot orange"></span>RSLogix (Allen-Bradley)</div>
+            <div class="skill-item"><span class="skill-dot orange"></span>MATLAB / Simulink</div>
+            <div class="skill-item"><span class="skill-dot orange"></span>Batch Process Control</div>
+            <div class="skill-item"><span class="skill-dot orange"></span>Predictive Maintenance</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p style="font-size:var(--text-xs);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-4)">Design &amp; Embedded</p>
+          <div class="skills-col">
+            <div class="skill-item"><span class="skill-dot muted"></span>PCB Design &amp; Footprinting</div>
+            <div class="skill-item"><span class="skill-dot muted"></span>Circuit Simulation (Proteus 9)</div>
+            <div class="skill-item"><span class="skill-dot muted"></span>MOSFET / BJT Applications</div>
+            <div class="skill-item"><span class="skill-dot muted"></span>Schmitt Trigger Design</div>
+            <div class="skill-item"><span class="skill-dot muted"></span>C++ / Python / C#</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tools">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Software &amp; Platforms</p>
+        <h2 class="section-title">Tools Used</h2>
+      </div>
+      <div class="reveal" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden">
+        <table class="tools-table">
+          <thead><tr><th>Tool / Platform</th><th>Category</th><th>Used For</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600">Proteus 9</td><td><span class="tag">Simulation</span></td><td style="color:var(--color-text-muted)">Circuit simulation, schematic design, virtual prototyping</td></tr>
+            <tr><td style="font-weight:600">TIA Portal V19</td><td><span class="tag">Automation</span></td><td style="color:var(--color-text-muted)">Siemens PLC programming, HMI config, industrial automation</td></tr>
+            <tr><td style="font-weight:600">RSLogix 500/5000</td><td><span class="tag">Automation</span></td><td style="color:var(--color-text-muted)">Allen-Bradley PLC ladder logic programming</td></tr>
+            <tr><td style="font-weight:600">MATLAB / Simulink</td><td><span class="tag">Simulation</span></td><td style="color:var(--color-text-muted)">Control system simulation, FOC modelling, signal processing</td></tr>
+            <tr><td style="font-weight:600">Unity</td><td><span class="tag">Simulation</span></td><td style="color:var(--color-text-muted)">Physics-based dynamic system simulation</td></tr>
+            <tr><td style="font-weight:600">Python</td><td><span class="tag">Programming</span></td><td style="color:var(--color-text-muted)">Sensor fusion, visual odometry, data pipelines</td></tr>
+            <tr><td style="font-weight:600">C++ / C#</td><td><span class="tag">Programming</span></td><td style="color:var(--color-text-muted)">Embedded systems, real-time control, Unity scripting</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-name">Mohamed Yehia &middot; Moista</div>
+    <div class="footer-sub">MSc Electrical Vehicle Systems &middot; Brunel University London</div>
+    <div class="footer-links">
+      <a href="https://github.com/mohamedysta" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+      <a href="https://github.com/mohamedysta/Moista-electrical-engineering-portfolio" target="_blank" rel="noopener noreferrer">Portfolio Repo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  r.setAttribute('data-theme',d);
+  function ui(){if(!t)return;t.innerHTML=d==='dark'?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+  ui();
+  if(t)t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);ui();});
+})();
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  const io=new IntersectionObserver((en)=>{en.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*55);io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
